@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cutters Choice Radio</title>
+    <link rel="preconnect" href="https://app.radiocult.fm">
+  <link rel="preconnect" href="https://widget.mixcloud.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img
+      class="logo"
+      src="https://i.imgur.com/SEiUhPX.png"
+      alt="Cutters Choice Radio Logo"
+      style="width:100%; max-width:250px; height:auto; margin-bottom:0.5rem;"
+     loading="lazy">
+    <div class="title">
+      <h1>Cutters Choice Radio</h1>
+      <p class="tagline">The home of relentless flavas and significant bangers!</p>
+    </div>
+    <img
+      class="logo"
+      src="https://i.imgur.com/SEiUhPX.png"
+      alt="Cutters Choice Radio Logo"
+      style="width:100%; max-width:250px; height:auto; margin-bottom:0.5rem;"
+     loading="lazy">
+  </header>
+
+  <div class="teal-line"></div>
+
+  <div class="grid-container">
+
+    <section class="chat">
+      <h2>Cutters Chat</h2>
+      <iframe
+        title="Cutters Choice Radio Chat"
+        src="https://app.radiocult.fm/embed/chat/cutters-choice-radio?theme=midnight&primaryColor=%235A8785&corners=sharp"
+        width="100%" height="700"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        seamless loading="lazy">
+      </iframe>
+      <div style="display: flex; justify-content: center; margin-top: 0.5rem;">
+  <button class="popout-btn" onclick="openChatPopup()">Pop Out Chat</button>
+</div>
+    </section>
+
+    <section class="live-player">
+      <h2>Live Now</h2>
+      <div class="player-container">
+        <iframe
+          id="inlinePlayer"
+          title="Cutters Choice Radio player"
+          src="https://app.radiocult.fm/embed/square-player/cutters-choice-radio?theme=midnight&primaryColor=%235A8785&corners=sharp"
+          allow="autoplay"
+          style="width:100%; height:100px; margin-top:5px; border:none; border-radius:4px;" loading="lazy">
+        </iframe>
+        <div
+          id="now-archive"
+          style="font-weight:bold; color:#5A8785; font-size:1.2rem; margin-top:0.5rem;">
+          Loading archive show…
+        </div>
+        <button id="popOutBtn" class="popout-btn">
+          Pop Out Player
+        </button>
+      </div>
+      <h3 id="now-dj">Loading current show…</h3>
+      <img
+        id="now-art"
+        src="https://i.imgur.com/EHhS47F.png"
+        alt="Current DJ Artwork"
+        style="width:100%; max-width:700px; margin-top:0.5rem; border-radius:4px;"
+       loading="lazy">
+    </section>
+
+    <section class="schedule">
+      <h2 class="schedule-heading">This Week’s Lineup</h2>
+      <div class="schedule-scroll" id="schedule-container">
+        <p>Loading this week’s schedule…</p>
+      </div>
+    </section>
+
+    
+      <section class="mixcloud">
+      <h2>Latest Archived Shows</h2>
+      <div id="mixcloud-list">
+        <div class="mixcloud-container">
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/doubledotdash/the-doubledotdash-radio-show-on-cutters-choice-radio-28042025/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/glitter_tits/the-mojo-dojo-cara-house-on-ccr-25425/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/CuttersChoiceRadio/the-benny-fonz-mws-session-230425/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/CuttersChoiceRadio/marionette-faux-archie-its-not-tasmania/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/Qualitychoicevideoclub/quality-choice-video-club-w-eurotrash-steve-4-19-2025/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/CuttersChoiceRadio/bass-beats-bleeps-wwesthamdave-the-full-12-inches-back-to-the-old-skool/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/markottaway/sparkie-live-from-the-funky-earworm-26-4-2025/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/CuttersChoiceRadio/tanookify-thursday-session-in-newish-breaks-we-trust-17042025-cutters-choice-radio/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/CuttersChoiceRadio/the-beat-side-ladies-of-hip-hop-425-cutters-choice-radio/" loading="lazy"></iframe>
+          <iframe src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&feed=https://www.mixcloud.com/nickrayman/independent-groove-202-april-2025/" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="add-mixcloud">
+        <input id="mixcloud-url" type="text" placeholder="Paste Mixcloud URL here…" /><br>
+        <button onclick="addMixcloud()">Add Show</button>
+      </div>
+    </section>
+
+
+  </div>
+
+  <footer class="banner">
+    <a href="#merch">Merch</a>
+    <a href="#djs">Our DJs</a>
+    <a href="#events">Events</a>
+    <a href="#history">History</a>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
