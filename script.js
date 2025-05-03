@@ -9,10 +9,24 @@ const BASE_URL        = "https://api.radiocult.fm/api";
 const FALLBACK_ART    = "https://i.imgur.com/qWOfxOS.png";
 const MIXCLOUD_PASSWORD = "cutters44";
 const isMobile        = /Mobi|Android/i.test(navigator.userAgent);
-
 // —————————————————————————————————————
 // 2) HELPERS
-// —————————————————————————————————————
+// 
+// CHAT IFRAME: lazy on mobile, auto on desktop
+—————————————————————————————————————
+function loadChat() {
+  // THIS LINE needs updating:
+  var chatContainer = document.querySelector('.chat');
+  
+  if (!chatContainer || chatContainer.dataset.loaded) return;
+  var iframe = document.createElement('iframe');
+  iframe.src    = chatContainer.getAttribute('data-src');
+  iframe.width  = '100%';
+  iframe.height = '650';
+  iframe.className = 'chat-iframe';
+  chatContainer.appendChild(iframe);
+  chatContainer.dataset.loaded = 'true';
+
 function createGoogleCalLink(title, startUtc, endUtc) {
   if (!startUtc || !endUtc) return "#";
   const fmt = dt => new Date(dt)
